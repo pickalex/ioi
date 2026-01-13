@@ -1,0 +1,14 @@
+{
+  "@@locale": "zh",
+  "appTitle": "直播应用",
+  "@appTitle": {
+    "description": "应用程序标题"
+  },
+  "helloWorld": "你好，世界！",
+  "@helloWorld": {
+    "description": "程序员常用的招呼语"
+  },
+  "settings": "设置",
+  "language": "语言",
+  "switchLanguage": "切换语言"
+}

@@ -1,0 +1,114 @@
+PODS:
+  - agora_rtc_engine (0.0.1):
+    - AgoraIrisRTC_macOS (= 4.5.2-build.2)
+    - AgoraRtcEngine_macOS (= 4.5.2)
+    - FlutterMacOS
+  - AgoraInfra_macOS (1.2.13.1)
+  - AgoraIrisRTC_macOS (4.5.2-build.2)
+  - AgoraRtcEngine_macOS (4.5.2):
+    - AgoraRtcEngine_macOS/AIAEC (= 4.5.2)
+    - AgoraRtcEngine_macOS/AIAECLL (= 4.5.2)
+    - AgoraRtcEngine_macOS/AINS (= 4.5.2)
+    - AgoraRtcEngine_macOS/AINSLL (= 4.5.2)
+    - AgoraRtcEngine_macOS/AudioBeauty (= 4.5.2)
+    - AgoraRtcEngine_macOS/ClearVision (= 4.5.2)
+    - AgoraRtcEngine_macOS/ContentInspect (= 4.5.2)
+    - AgoraRtcEngine_macOS/FaceCapture (= 4.5.2)
+    - AgoraRtcEngine_macOS/FaceDetection (= 4.5.2)
+    - AgoraRtcEngine_macOS/LipSync (= 4.5.2)
+    - AgoraRtcEngine_macOS/RtcBasic (= 4.5.2)
+    - AgoraRtcEngine_macOS/ScreenCapture (= 4.5.2)
+    - AgoraRtcEngine_macOS/SpatialAudio (= 4.5.2)
+    - AgoraRtcEngine_macOS/VideoAv1CodecDec (= 4.5.2)
+    - AgoraRtcEngine_macOS/VideoAv1CodecEnc (= 4.5.2)
+    - AgoraRtcEngine_macOS/VideoCodecDec (= 4.5.2)
+    - AgoraRtcEngine_macOS/VideoCodecEnc (= 4.5.2)
+    - AgoraRtcEngine_macOS/VirtualBackground (= 4.5.2)
+    - AgoraRtcEngine_macOS/VQA (= 4.5.2)
+  - AgoraRtcEngine_macOS/AIAEC (4.5.2)
+  - AgoraRtcEngine_macOS/AIAECLL (4.5.2)
+  - AgoraRtcEngine_macOS/AINS (4.5.2)
+  - AgoraRtcEngine_macOS/AINSLL (4.5.2)
+  - AgoraRtcEngine_macOS/AudioBeauty (4.5.2)
+  - AgoraRtcEngine_macOS/ClearVision (4.5.2)
+  - AgoraRtcEngine_macOS/ContentInspect (4.5.2)
+  - AgoraRtcEngine_macOS/FaceCapture (4.5.2)
+  - AgoraRtcEngine_macOS/FaceDetection (4.5.2)
+  - AgoraRtcEngine_macOS/LipSync (4.5.2)
+  - AgoraRtcEngine_macOS/RtcBasic (4.5.2):
+    - AgoraInfra_macOS (= 1.2.13.1)
+  - AgoraRtcEngine_macOS/ScreenCapture (4.5.2)
+  - AgoraRtcEngine_macOS/SpatialAudio (4.5.2)
+  - AgoraRtcEngine_macOS/VideoAv1CodecDec (4.5.2)
+  - AgoraRtcEngine_macOS/VideoAv1CodecEnc (4.5.2)
+  - AgoraRtcEngine_macOS/VideoCodecDec (4.5.2)
+  - AgoraRtcEngine_macOS/VideoCodecEnc (4.5.2)
+  - AgoraRtcEngine_macOS/VirtualBackground (4.5.2)
+  - AgoraRtcEngine_macOS/VQA (4.5.2)
+  - file_picker (0.0.1):
+    - FlutterMacOS
+  - file_selector_macos (0.0.1):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+  - iris_method_channel (0.0.1):
+    - FlutterMacOS
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - sqflite_darwin (0.0.4):
+    - Flutter
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - agora_rtc_engine (from `Flutter/ephemeral/.symlinks/plugins/agora_rtc_engine/macos`)
+  - file_picker (from `Flutter/ephemeral/.symlinks/plugins/file_picker/macos`)
+  - file_selector_macos (from `Flutter/ephemeral/.symlinks/plugins/file_selector_macos/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - iris_method_channel (from `Flutter/ephemeral/.symlinks/plugins/iris_method_channel/macos`)
+  - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
+  - shared_preferences_foundation (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/darwin`)
+  - sqflite_darwin (from `Flutter/ephemeral/.symlinks/plugins/sqflite_darwin/darwin`)
+
+SPEC REPOS:
+  trunk:
+    - AgoraInfra_macOS
+    - AgoraIrisRTC_macOS
+    - AgoraRtcEngine_macOS
+
+EXTERNAL SOURCES:
+  agora_rtc_engine:
+    :path: Flutter/ephemeral/.symlinks/plugins/agora_rtc_engine/macos
+  file_picker:
+    :path: Flutter/ephemeral/.symlinks/plugins/file_picker/macos
+  file_selector_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/file_selector_macos/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  iris_method_channel:
+    :path: Flutter/ephemeral/.symlinks/plugins/iris_method_channel/macos
+  path_provider_foundation:
+    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin
+  shared_preferences_foundation:
+    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/darwin
+  sqflite_darwin:
+    :path: Flutter/ephemeral/.symlinks/plugins/sqflite_darwin/darwin
+
+SPEC CHECKSUMS:
+  agora_rtc_engine: c76a42e7b1b617c4d7b23d84bd6d26c4f53a2bd6
+  AgoraInfra_macOS: 9bc9cea2486446c87d3ee3e69325cdb45ecf99c2
+  AgoraIrisRTC_macOS: 66c134edf52e1dd9863b00494207345e2140b286
+  AgoraRtcEngine_macOS: ca423379ffb023c12a267e9ce6234f90a431f4d2
+  file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
+  file_selector_macos: 9e9e068e90ebee155097d00e89ae91edb2374db7
+  FlutterMacOS: d0db08ddef1a9af05a5ec4b724367152bb0500b1
+  iris_method_channel: 06ef372f01b31866748a3c45da2c89c93b666daa
+  path_provider_foundation: bb55f6dbba17d0dccd6737fe6f7f34fbd0376880
+  shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
+  sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
+
+PODFILE CHECKSUM: 54d867c82ac51cbd61b565781b9fada492027009
+
+COCOAPODS: 1.16.2

@@ -1,0 +1,73 @@
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '13.0'
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig, then run flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  use_frameworks!
+  # 必须添加这一行，解决 Swift/ObjC 混编问题 (DKPhotoGallery/SDWebImage)
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    
+    # 确保最低支持 iOS 13.0
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+
+
+pre_install do |installer|
+  puts "--- [Conflict Fix] Starting Pre-install Cleanup ---"
+
+  target_pods = ['AgoraRtm']
+  
+  target_pods.each do |pod_name|
+    possible_paths = [
+      File.join(installer.sandbox.root, pod_name, 'aosl.xcframework'),
+      File.join(installer.sandbox.root, pod_name, 'Frameworks', 'aosl.xcframework')
+    ]
+    
+    possible_paths.each do |path|
+      if File.exist?(path)
+        puts "--- [Conflict Fix] Deleting duplicate: #{path} ---"
+        FileUtils.rm_rf(path)
+      end
+    end
+  end
+  puts "--- [Conflict Fix] Cleanup Complete (Preserved AgoraInfra_iOS) ---"
+end
