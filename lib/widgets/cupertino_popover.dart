@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class CupertinoPopover extends StatefulWidget {
   final Widget child;
   final Widget Function(
@@ -40,13 +38,23 @@ class CupertinoPopover extends StatefulWidget {
 
 class _CupertinoPopoverState extends State<CupertinoPopover> {
   OverlayEntry? _overlayEntry;
-  late final CupertinoPopoverController _controller;
+  late CupertinoPopoverController _controller;
 
   @override
   void initState() {
     super.initState();
     _controller = widget.controller ?? CupertinoPopoverController();
     _controller._attach(this);
+  }
+
+  @override
+  void didUpdateWidget(CupertinoPopover oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.controller != widget.controller) {
+      _controller._detach();
+      _controller = widget.controller ?? CupertinoPopoverController();
+      _controller._attach(this);
+    }
   }
 
   void _dismiss() {
@@ -147,6 +155,7 @@ class _CupertinoPopoverState extends State<CupertinoPopover> {
 
   @override
   void dispose() {
+    _controller._detach();
     _dismiss();
     super.dispose();
   }
@@ -158,6 +167,10 @@ class CupertinoPopoverController {
 
   void _attach(_CupertinoPopoverState state) {
     _state = state;
+  }
+
+  void _detach() {
+    _state = null;
   }
 
   void show() {
